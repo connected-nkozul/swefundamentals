@@ -7,6 +7,7 @@ RUN sudo apt-get install -y dialog
 RUN sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password password'
 RUN sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password password'
 RUN sudo apt-get install -y mysql-server
+RUN sudo service mysqld start
 RUN sudo apt-get install -y mysql-client
 RUN sudo apt-get install -y nano tmux
 
