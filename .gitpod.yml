@@ -5,7 +5,7 @@ image:
 tasks:
 - init: ./mvnw package -DskipTests
   command: java -jar target/*.jar
-- init: while ! (mysqladmin ping); do sleep 2; done && mysql < /workspace/swefundamentals/src/main/resources/db/mysql/schema.sql && mysql < /workspace/swefundamentals/src/main/resources/db/mysql/data.sql
+- init: while ! (mysqladmin ping 2> /dev/null); do sleep 2; echo 'Waiting for mySQL... sit tight!'; done && mysql < /workspace/swefundamentals/src/main/resources/db/mysql/schema.sql && mysql < /workspace/swefundamentals/src/main/resources/db/mysql/data.sql
 
 # exposed ports
 ports:
