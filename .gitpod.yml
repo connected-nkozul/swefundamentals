@@ -5,8 +5,7 @@ image:
 tasks:
 - init: ./mvnw package -DskipTests
   command: java -jar target/*.jar
-- init: mysql < /workspace/swefundamentals/src/main/resources/db/mysql/schema.sql
-- init: mysql < /workspace/swefundamentals/src/main/resources/db/mysql/data.sql
+- init: mysql < /workspace/swefundamentals/src/main/resources/db/mysql/schema.sql && mysql < /workspace/swefundamentals/src/main/resources/db/mysql/data.sql
 
 # exposed ports
 ports:
